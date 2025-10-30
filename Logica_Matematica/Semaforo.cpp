@@ -6,7 +6,7 @@ unsigned char proximoEstado(unsigned char estado, unsigned char Ncar, unsigned c
     unsigned char b0 = estado & 1;         
     unsigned char b1 = (estado >> 1) & 1;  
 
-    //! Máscaras de qual estado está ativo
+    //! Máscaras de qual semáforo está ativo
     unsigned char Ngreen = (~b1) & (~b0);
     unsigned char Egreen = (~b1) & b0;
     unsigned char Sgreen = b1 & (~b0);
