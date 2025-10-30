@@ -12,7 +12,7 @@ unsigned char proximoEstado(unsigned char estado, unsigned char Ncar, unsigned c
     unsigned char Sgreen = b1 & (~b0);
     unsigned char Wgreen = b1 & b0;
 
-    //! Prioridade no sentido horário (N → E → S → W → N)
+    //! Prioridade no sentido horário (N -> E -> S -> W -> N)
     //! Calcula qual será o próximo semáforo usando lógica binária
     unsigned char proxN = (Wgreen & Ncar & (~Ecar) & (~Scar)) | (Ngreen & (~Ecar) & (~Scar) & (~Wcar)) | (Ncar & (~Scar) & (~Ecar) & (~Wcar));
     unsigned char proxE = (Ngreen & Ecar) | (Egreen & (~Scar) & (~Wcar) & (~Ncar)) | (Ecar & (~Ncar) & (~Scar) & (~Wcar));
