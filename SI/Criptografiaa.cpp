@@ -78,7 +78,7 @@ int main() {
     }
 
     //! mostrar a matriz criptografada
-    cout << "Matriz criptografada (todas as diagonais trocadas):" << endl;
+    cout << "Matriz criptografada:" << endl;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             cout << matriz[i][j] << " ";
