@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-//! Criptografia trocando todas as diagonais
+//! Criptografia na diagonal diagonal
 
 int main() {
     string frase;
@@ -10,6 +10,10 @@ int main() {
     int n = 1;
     char matriz[50][50];
     int pos = 0;
+    int r1, c1;
+    int r2, c2;
+    char temp;
+
 
     cout << "Digite a frase (use * no lugar do espaco): ";
     cin >> frase;
@@ -24,43 +28,56 @@ int main() {
         n++;
     }
 
-    //! retirar acentos
+     //! retirar acentos
     for (int i = 0; i < tamanho; i++) {
-        // Maiúsculas
-        if (frase[i] == 'Á' || frase[i] == 'À' || frase[i] == 'Ã' || frase[i] == 'Â')
+        //! Maiúsculas
+        if (frase[i] == 'Á' or frase[i] == 'À' or frase[i] == 'Ã' or frase[i] == 'Â'){
             frase[i] = 'A';
-        else if (frase[i] == 'É' || frase[i] == 'Ê')
+        }
+        else if (frase[i] == 'É' or frase[i] == 'Ê'){
             frase[i] = 'E';
-        else if (frase[i] == 'Í')
+        }
+        else if (frase[i] == 'Í'){
             frase[i] = 'I';
-        else if (frase[i] == 'Ó' || frase[i] == 'Õ' || frase[i] == 'Ô')
+        }
+        else if (frase[i] == 'Ó' or frase[i] == 'Õ' or frase[i] == 'Ô'){
             frase[i] = 'O';
-        else if (frase[i] == 'Ú')
+        }
+        else if (frase[i] == 'Ú'){
             frase[i] = 'U';
-        else if (frase[i] == 'Ç')
+        }
+        else if (frase[i] == 'Ç'){
             frase[i] = 'C';
-        // Minúsculas
-        else if (frase[i] == 'á' || frase[i] == 'à' || frase[i] == 'ã' || frase[i] == 'â')
+        }
+
+        //! Minúsculas
+        else if (frase[i] == 'á' or frase[i] == 'à' or frase[i] == 'ã' or frase[i] == 'â'){
             frase[i] = 'a';
-        else if (frase[i] == 'é' || frase[i] == 'ê')
+        }
+        else if (frase[i] == 'é' or frase[i] == 'ê'){
             frase[i] = 'e';
-        else if (frase[i] == 'í')
+        }
+        else if (frase[i] == 'í'){
             frase[i] = 'i';
-        else if (frase[i] == 'ó' || frase[i] == 'õ' || frase[i] == 'ô')
+        }
+        else if (frase[i] == 'ó' or frase[i] == 'õ' or frase[i] == 'ô'){
             frase[i] = 'o';
-        else if (frase[i] == 'ú')
+        }
+        else if (frase[i] == 'ú'){
             frase[i] = 'u';
-        else if (frase[i] == 'ç')
+        }
+        else if (frase[i] == 'ç'){
             frase[i] = 'c';
+        }
     }
 
-    //! completar com "*"
+    //! completar com "*" 
     while (tamanho < n * n) {
         frase += '*';
         tamanho++;
     }
 
-    //! preencher a matriz
+    //! preencher a matriz )
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             matriz[i][j] = frase[pos];
@@ -68,12 +85,29 @@ int main() {
         }
     }
 
-    //! trocar todas as diagonais
-    for (int i = 0; i < n; i++) {
-        for (int j = i + 1; j < n; j++) {
-            char temp = matriz[i][j];
-            matriz[i][j] = matriz[j][i];
-            matriz[j][i] = temp;
+    //! trocar na diagonal principal
+    for (int d = 1; d <= n - 1; d++) {
+        for (int i = 0; i <= n - 1 - d; i++) {
+            r1 = i; 
+            c1 = i + d;
+            r2 = i + d;
+            c2 = i;
+            temp = matriz[r1][c1];
+            matriz[r1][c1] = matriz[r2][c2];
+            matriz[r2][c2] = temp;
+        }
+    }
+
+    //! trocar na diagonal secundária
+    for (int d = 1; d <= n - 1; d++) {
+        for (int i = 0; i <= n - 1 - d; i++) {
+            r1 = i;
+            c1 = (n - 1) - (i + d);
+            r2 = i + d;
+            c2 = (n - 1) - i;
+            temp = matriz[r1][c1];
+            matriz[r1][c1] = matriz[r2][c2];
+            matriz[r2][c2] = temp;
         }
     }
 

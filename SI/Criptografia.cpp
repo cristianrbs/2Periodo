@@ -27,32 +27,44 @@ int main() {
     //! retirar acentos
     for (int i = 0; i < tamanho; i++) {
         //! Maiúsculas
-        if (frase[i] == 'Á' || frase[i] == 'À' || frase[i] == 'Ã' || frase[i] == 'Â')
+        if (frase[i] == 'Á' or frase[i] == 'À' or frase[i] == 'Ã' or frase[i] == 'Â'){
             frase[i] = 'A';
-        else if (frase[i] == 'É' || frase[i] == 'Ê')
+        }
+        else if (frase[i] == 'É' or frase[i] == 'Ê'){
             frase[i] = 'E';
-        else if (frase[i] == 'Í')
+        }
+        else if (frase[i] == 'Í'){
             frase[i] = 'I';
-        else if (frase[i] == 'Ó' || frase[i] == 'Õ' || frase[i] == 'Ô')
+        }
+        else if (frase[i] == 'Ó' or frase[i] == 'Õ' or frase[i] == 'Ô'){
             frase[i] = 'O';
-        else if (frase[i] == 'Ú')
+        }
+        else if (frase[i] == 'Ú'){
             frase[i] = 'U';
-        else if (frase[i] == 'Ç')
+        }
+        else if (frase[i] == 'Ç'){
             frase[i] = 'C';
+        }
 
         //! Minúsculas
-        else if (frase[i] == 'á' || frase[i] == 'à' || frase[i] == 'ã' || frase[i] == 'â')
+        else if (frase[i] == 'á' or frase[i] == 'à' or frase[i] == 'ã' or frase[i] == 'â'){
             frase[i] = 'a';
-        else if (frase[i] == 'é' || frase[i] == 'ê')
+        }
+        else if (frase[i] == 'é' or frase[i] == 'ê'){
             frase[i] = 'e';
-        else if (frase[i] == 'í')
+        }
+        else if (frase[i] == 'í'){
             frase[i] = 'i';
-        else if (frase[i] == 'ó' || frase[i] == 'õ' || frase[i] == 'ô')
+        }
+        else if (frase[i] == 'ó' or frase[i] == 'õ' or frase[i] == 'ô'){
             frase[i] = 'o';
-        else if (frase[i] == 'ú')
+        }
+        else if (frase[i] == 'ú'){
             frase[i] = 'u';
-        else if (frase[i] == 'ç')
+        }
+        else if (frase[i] == 'ç'){
             frase[i] = 'c';
+        }
     }
 
     //! completar com "*" 
